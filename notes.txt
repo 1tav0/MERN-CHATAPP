@@ -1,0 +1,7 @@
+In computer science, rendering refers to the process of generating an image from a 
+model by means of computer programs. It is used to create 2D and 3D computer graphics 
+for use in various media, such as films, television programs, and video games. 
+In web development, rendering refers to the process of generating the HTML, CSS, and 
+JavaScript code that is sent to the browser to be displayed as a web page. When a user 
+interacts with a web page, the browser sends a request to the server for the updated page, 
+which is then rendered and displayed in the browser.
