@@ -10,7 +10,8 @@ const Navbar = () => {
     const {user,setUser} = useContext(UserContext);
     const logout = async () =>{
         try {
-            const res = await fetch('http://localhost:5000/logout',{
+            const urlHerokuBackend = "https://mernchat-backend-12ed1a55588c.herokuapp.com"
+            const res = await fetch(`${urlHerokuBackend}/logout`,{
             credentials: 'include',
             });
             const data = res.json;

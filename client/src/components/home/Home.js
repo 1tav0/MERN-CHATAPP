@@ -10,7 +10,8 @@ const {user,setUser} = useContext(UserContext);
 const [room, setRoom] = useState('');
 const [rooms, setRooms] = useState([]); //to Listen when we create a room event at the client side
 
-  const ENDPT = 'localhost:5000';
+  // const ENDPT = 'localhost:5000';
+  const ENDPT = "mernchat-backend-12ed1a55588c.herokuapp.com";
   useEffect(() => {
     socket = io(ENDPT);
   

@@ -20,8 +20,9 @@ const Login = () => {
         setPasswordError('');
         console.log(name,email,password) //the values stored here are shown in console when we press submit button after we type them in the app
         //to call Login api from client 
-        try {
-            const res = await fetch('http://localhost:5000/login', {
+      try {
+        const urlHerokuBackend = " https://mernchat-backend-12ed1a55588c.herokuapp.com";
+            const res = await fetch(`${urlHerokuBackend}/login`, {
                 method:'POST',
                 credentials:'include',
                 body:JSON.stringify({name,email,password}),

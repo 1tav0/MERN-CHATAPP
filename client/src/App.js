@@ -12,7 +12,8 @@ function App() {
   useEffect(() => { //to verify the user with the jwt token
     const verifyUser = async () => {
       try {
-        const res = await fetch('http://localhost:5000/verifyuser', {
+        const urlHerokuBackend = "https://mernchat-backend-12ed1a55588c.herokuapp.com";
+        const res = await fetch(`${urlHerokuBackend}/verifyuser`, {
                 credentials:'include',
                 headers: {'Content-Type':'application/json'}
       });

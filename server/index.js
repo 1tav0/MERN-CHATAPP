@@ -4,8 +4,9 @@ const app = express();
 const cors = require('cors');//we get a cors policy error when try catch the code in signup flie in client side so we do this to resolve it 
 
 const cookieParser = require('cookie-parser'); //to set and get cookies with options 
-var corsOptions = { //for cors to call up signup api from client 
-  origin: 'http://localhost:3000',
+var corsOptions = { //for cors to call up signup api from client
+  // origin: 'http://localhost:3000',
+  origin: "https://main.d3nqgiezxgirok.amplifyapp.com",
   credentials: true,
   optionSuccessStatus:200
 }
@@ -25,7 +26,11 @@ const mongoDB = "mongodb+srv://1tav0:Legendary1010@cluster0.qj0hn5z.mongodb.net/
 mongoose.set('strictQuery', true).set('strictQuery', true).connect(mongoDB).then(()=>console.log('connected')).catch(err=>console.log(err));
 
 const {addUser, getUser, removeUser} = require('./helper');
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+}
 const Room = require('./models/Room'); //to create a room model and connect to mongoDB
 
 app.get('/set-cookies', (req,res) => {
@@ -101,6 +106,6 @@ io.on('connection', (socket) => {
   })
 });
 
-server.listen(PORT, () => {
-  console.log(`listening on ${PORT}`);
+server.listen(port, () => {
+  console.log(`server has started on port ${port}`);
 });

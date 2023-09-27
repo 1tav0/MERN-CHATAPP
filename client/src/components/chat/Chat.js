@@ -9,7 +9,8 @@ let socket;
 
 
 const Chat = () => {
-  const ENDPT = 'localhost:5000';
+  // const ENDPT = 'localhost:5000';
+  const ENDPT = 'mernchat-backend-12ed1a55588c.herokuapp.com';
   const {user,setUser} = useContext(UserContext);
   let {room_id, room_name } = useParams();
   const [message,setMessage] = useState(''); //for send message function
